@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Chatbot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Hello! I'm a simple chatbot. What's your name?");
+        String name = scanner.nextLine();
+
+        System.out.println("Nice to meet you, " + name + "! How are you today?");
+        String response = scanner.nextLine();
+
+        while (true) {
+            if (response.equalsIgnoreCase("good") || response.equalsIgnoreCase("great") || response.equalsIgnoreCase("fine")) {
+                System.out.println("That's awesome! Hope you are doing well..");
+            } else if (response.equalsIgnoreCase("bad") || response.equalsIgnoreCase("terrible")) {
+                System.out.println("Sorry to hear that. Would you like to talk about what's bothering you?");
+            } else if (response.equalsIgnoreCase("bye") || response.equalsIgnoreCase("goodbye")) {
+                System.out.println("It was nice chatting with you, " + name + ". Goodbye!");
+                break;
+            } else {
+                System.out.println("I didn't understand that. Can you please rephrase?");
+            }
+
+            response = scanner.nextLine();
+        }
+    }
+}
